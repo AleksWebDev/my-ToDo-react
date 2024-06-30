@@ -63,3 +63,11 @@
 .footer {
 	display: flex;
 }
+
+.important{
+	font-weight: 700;
+}
+
+.done{
+	text-decoration: line-through;
+}

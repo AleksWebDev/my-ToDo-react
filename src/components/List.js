@@ -2,11 +2,9 @@ import ListItem from "./ListItem"
 
 function List (props) {
 
-    console.log(props.data)
-
     const render = props.data.map((task) => {
         return (
-            <ListItem key={task.id} task={task}/>
+            <ListItem onToggleImportant={props.onToggleImportant} onToggleDone={props.onToggleDone} key={task.id} task={task}/>
         )
     })
 
@@ -18,8 +16,8 @@ function List (props) {
 
     return (
         <ul className="todo-list">
-        {props.data.length > 0 ? render : emptyList}
-      </ul>
+            {props.data.length > 0 ? render : emptyList}
+        </ul>
     )
 }
 

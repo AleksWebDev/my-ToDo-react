@@ -1,16 +1,10 @@
 import ListItem from "./ListItem"
 
-function List () {
+function List (props) {
 
+    console.log(props.data)
 
-    const tasks = [
-        {id: 1, title: 'Сделать зарядку'},
-        {id: 2, title: 'Почистить забу'},
-        {id: 3, title: 'Завтрак'},
-    ]
-
-
-    const render = tasks.map((task) => {
+    const render = props.data.map((task) => {
         return (
             <ListItem key={task.id} task={task}/>
         )
@@ -24,7 +18,7 @@ function List () {
 
     return (
         <ul className="todo-list">
-        {tasks.length > 0 ? render : emptyList}
+        {props.data.length > 0 ? render : emptyList}
       </ul>
     )
 }

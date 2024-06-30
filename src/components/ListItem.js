@@ -8,14 +8,18 @@ class ListItem extends React.Component{
     }
 
     onImportantClick = () => {
-        this.setState({
-            important: true
+        this.setState((state) => {
+            return {
+                important: !state.important
+            }
         })
     }
 
     onDoneClick = () => {
-        this.setState({
-            done: true
+        this.setState((state) => {
+            return {
+                done: !state.done
+            }
         })
     }
 

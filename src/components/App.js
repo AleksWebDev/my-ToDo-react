@@ -16,7 +16,8 @@ class App extends React.Component {
         ],
 
         term: '',
-        status: 'all' // active, done
+        status: 'all', // active, done
+        totalTask: 0,
     }
 
     onToggleImportant = (id) => {
@@ -117,11 +118,13 @@ class App extends React.Component {
     }
 
     render(){
+        
         const visibleItems = this.search(this.state.todoData, this.state.term);
         const filteredByStatus = this.filterByStatus(visibleItems, this.state.status)
+
         return (
             <div className="todo-app p-5">
-            <Header/>
+            <Header tasks={visibleItems} />
             <div className="search">
             <Search changeTerm={this.changeTerm} term={this.state.term}/>
             <StatusBar changeStatus={this.changeStatus} status={this.state.status}/>

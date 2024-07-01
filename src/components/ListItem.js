@@ -17,7 +17,7 @@ class ListItem extends React.Component{
             <span onClick={() => {this.props.onToggleDone(this.props.task.id)}} className={classDone}>{this.props.task.title}</span>
             <div className="btn-group">
                 <button onClick={() => {this.props.onToggleImportant(this.props.task.id)}}  role="button" className="btn btn-outline-dark btn-sm">Важное</button>
-                <button role="button" className="btn btn-outline-danger btn-sm">Удалить</button>
+                <button onClick={() => {this.props.deliteTask(this.props.task.id)}} role="button" className="btn btn-outline-danger btn-sm">Удалить</button>
             </div>
         </li>
         )
